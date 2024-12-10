@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:gravity="center"
+        android:background="#6200EE"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dog Breeds"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            android:padding="16dp" />
+    </LinearLayout>
+
+    <!-- RecyclerView to show the list of dog breeds -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dogRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Add Dog Breed Button -->
+    <Button
+        android:id="@+id/addDogButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Dog Breed"
+        android:layout_marginTop="16dp" />
+
+    <!-- Bottom Bar Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#6200EE"
+        android:padding="8dp">
+    </LinearLayout>
+</LinearLayout>

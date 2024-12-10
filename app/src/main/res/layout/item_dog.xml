@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <!-- Dog image on the left -->
+    <ImageView
+        android:id="@+id/dogImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:scaleType="centerCrop"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Dog name on the right -->
+    <TextView
+        android:id="@+id/dogName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="Dog Name"
+        android:textSize="18sp"
+        android:textColor="#000000"/>
+</RelativeLayout>
