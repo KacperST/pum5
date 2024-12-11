@@ -6,22 +6,15 @@ import androidx.lifecycle.ViewModel
 
 class DogsViewModel : ViewModel() {
 
-    private val _dogs = MutableLiveData<List<DogBreed>>()
+    private val _dogs = MutableLiveData<List<DogBreed>>(mutableListOf())
     val dogs: LiveData<List<DogBreed>> get() = _dogs
 
-    private val dogList = mutableListOf<DogBreed>()
-
     init {
-        // Initialize with some data
-        dogList.add(DogBreed("Golden Retriever", "golden_retriever"))
-        dogList.add(DogBreed("Labrador", "labrador"))
-        dogList.add(DogBreed("Beagle", "beagle"))
-        _dogs.value = dogList
+        TODO("Initialize dogs with some examples. image names are in res/drawable")
     }
 
-    // Method to add a new dog breed
-    fun addDogBreed(dogBreed: DogBreed) {
-        dogList.add(dogBreed)
-        _dogs.value = dogList // Notify observers of the new data
+    fun todo(){
+        TODO("IMplement functon to add new dogbreed called addDogBreed ")
     }
+
 }

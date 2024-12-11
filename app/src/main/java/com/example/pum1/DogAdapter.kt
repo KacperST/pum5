@@ -8,6 +8,7 @@
     import android.widget.TextView
     import androidx.recyclerview.widget.RecyclerView
 
+    // DON'T TOUCH
     class DogAdapter(
         private val context: Context,
         private val dogs: List<DogBreed>
@@ -22,12 +23,10 @@
             val dog = dogs[position]
             holder.dogName.text = dog.name
 
-            // Load image from drawable resources
-            val imageResId = context.resources.getIdentifier(dog.imageURL, "drawable", context.packageName)
+            val imageResId = context.resources.getIdentifier(dog.imageName, "drawable", context.packageName)
             if (imageResId != 0) {
                 holder.dogImage.setImageResource(imageResId)
             } else {
-                // Set a default image if the drawable is not found
                 holder.dogImage.setImageResource(R.drawable.default_image)
             }
         }

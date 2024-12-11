@@ -22,42 +22,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initialize RecyclerView
         dogRecyclerView = findViewById(R.id.dogRecyclerView)
         dogRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Initialize the ViewModel
-        dogsViewModel = ViewModelProvider(this).get(DogsViewModel::class.java)
+        dogsViewModel = ViewModelProvider(this)[DogsViewModel::class.java]
 
-        // Initialize the Adapter
-        dogAdapter = DogAdapter(this, emptyList()) // Start with an empty list
+        dogAdapter = DogAdapter(this, emptyList())
         dogRecyclerView.adapter = dogAdapter
 
-        // Observe the LiveData from ViewModel
         dogsViewModel.dogs.observe(this, { dogList ->
-            // Update the list when data changes
             dogAdapter = DogAdapter(this, dogList)
             dogRecyclerView.adapter = dogAdapter
         })
 
-        // Get the reference to the button and set a click listener
-        addDogButton = findViewById(R.id.addDogButton)
-        addDogButton.setOnClickListener {
-            showAddDogDialog()
-        }
+        TODO("Set a click listener on button and invoke dialog")
     }
-
+    // DON'T TOUCH
     private fun showAddDogDialog() {
-        // Create an EditText for the dog name
         val dogNameInput = EditText(this)
         dogNameInput.hint = "Enter Dog Breed Name"
-
-        // Create a layout for the dialog
         val layout = LinearLayout(this)
         layout.orientation = LinearLayout.VERTICAL
         layout.setPadding(32, 16, 32, 16)
         layout.addView(dogNameInput)
-        // Create and show the dialog
         val dialog = AlertDialog.Builder(this)
             .setTitle("Add Dog Breed")
             .setView(layout)
